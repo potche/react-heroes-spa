@@ -1,6 +1,6 @@
 import { createBrowserRouter, redirect } from "react-router-dom";
 
-import { DC, Marvel } from "./heroes/pages";
+import { DC, Hero, Marvel } from "./heroes/pages";
 import { Login } from "./auth/pages/Login";
 import { Navbar } from "./ui/components";
 
@@ -11,17 +11,25 @@ export const router = createBrowserRouter([
     Component: Navbar,
     children: [
       {
-        path: "/marvel",
+        path: "marvel",
         element: <Marvel />,
       },
       {
-        path: "/dc",
+        path: "dc",
         element: <DC />,
+      },
+      {
+        path: "hero/:id",
+        element: <Hero />,
+      },
+      {
+        path: "/",
+        element: <Marvel />,
       },
     ],
   },
   {
-    path: "/login",
+    path: "login",
     element: <Login />,
   },
   {

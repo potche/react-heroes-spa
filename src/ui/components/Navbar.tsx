@@ -3,7 +3,7 @@ import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 export const Navbar = () => {
   const navigate = useNavigate();
 
-  const handleLogout = () => {
+  const onLogout = () => {
     navigate("/login", {
       replace: true,
     });
@@ -42,7 +42,7 @@ export const Navbar = () => {
           <ul className="navbar-nav ml-auto">
             <span className="nav-item nav-link text-info">Nombre</span>
 
-            <button className="nav-item nav-link btn" onClick={handleLogout}>
+            <button className="nav-item nav-link btn" onClick={onLogout}>
               Logout
             </button>
           </ul>
