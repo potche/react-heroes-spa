@@ -1,6 +1,6 @@
 import { createBrowserRouter, redirect } from "react-router-dom";
 
-import { DC, Hero, Marvel } from "./heroes/pages";
+import { DC, Hero, Marvel, Search } from "./heroes/pages";
 import { Login } from "./auth/pages/Login";
 import { Navbar } from "./ui/components";
 
@@ -21,6 +21,10 @@ export const router = createBrowserRouter([
       {
         path: "hero/:id",
         element: <Hero />,
+      },
+      {
+        path: "search",
+        element: <Search />,
       },
       {
         path: "/",
