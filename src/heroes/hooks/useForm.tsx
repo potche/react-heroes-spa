@@ -3,7 +3,11 @@ import { useState } from "react";
 export const useForm = <T extends Object>(initState: T) => {
   const [formState, setFormState] = useState(initState);
 
-  const onChange = (target: any) => {
+  const onInputChange = ({
+    target,
+  }: {
+    target: EventTarget & HTMLInputElement;
+  }) => {
     const { name, value } = target;
     setFormState({
       ...formState,
@@ -11,13 +15,14 @@ export const useForm = <T extends Object>(initState: T) => {
     });
   };
 
-  const onReset = () => {
+  const onResetForm = () => {
     setFormState(initState);
   };
+
   return {
     ...formState,
-    form: formState,
-    onChange,
-    onReset,
+    formState,
+    onInputChange,
+    onResetForm,
   };
 };
